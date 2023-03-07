@@ -1,7 +1,15 @@
 
 const dateElement = document.getElementById('date')
 const timeElement = document.getElementById('time')
+const greetingElement = document.getElementById('greeting')
+
+chrome.storage.sync.get(['greetingMessage'], (result) => {
+    greetingElement.textContent = result.greetingMessage;
+  
+  })
+  
 updateDateTime()
+
 function updateDateTime() {
     const newDate = new Date()
   
